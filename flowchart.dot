@@ -1,0 +1,20 @@
+digraph GA {
+    graph [bgcolor="white", rankdir=TB, fontsize=12, fontname="DejaVu Sans", pad=0.2, nodesep=0.38, ranksep=0.45];
+    node [fontname="DejaVu Sans", fontsize=11, style="rounded,filled", color="#A0B6CC", fillcolor="#F2F7FC", shape=box, penwidth=1.2, margin="0.20,0.10"];
+    edge [color="#677D98", arrowsize=0.7, fontname="DejaVu Sans", fontsize=10];
+    start [label="Задать seed, конфигурацию\nи бюджет вычислений"];
+    init [label="Создать начальную популяцию\nиз [-5, 10]⁷"];
+    eval [label="Оценить функцию Розенброка\nи сохранить лучший результат"];
+    stop [shape=diamond, style=filled, fillcolor="#FFF3DD", color="#CDA862", label="Исчерпан\nбюджет?"];
+    finish [label="Вывести лучший x и f(x),\nсохранить историю", fillcolor="#E9F7EE", color="#88B99E"];
+    elite [label="Сохранить 2 элитные особи"];
+    select [label="Турнирная селекция\nродителей (k = 3)"];
+    cross [label="BLX-α (p = 0.9)\nили копирование родителя"];
+    mutation [label="Покоординатная\nгауссовская мутация"];
+    clip [label="Проекция в границы [-5, 10]⁷"];
+    next [label="Новое поколение и\nоценка всех 100 особей"];
+    start -> init -> eval -> stop;
+    stop -> finish [label="Да"];
+    stop -> elite [label="Нет"];
+    elite -> select -> cross -> mutation -> clip -> next -> stop;
+}
