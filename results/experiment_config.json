@@ -1,0 +1,38 @@
+{
+  "variant": 2,
+  "N": 15,
+  "Q": 0,
+  "Y": 26,
+  "dimension": 7,
+  "domain": [
+    -5.0,
+    10.0
+  ],
+  "runs": 20,
+  "base_seed": 2026,
+  "configs": {
+    "GA_p0.20": {
+      "population": 100,
+      "evaluations": 40000,
+      "crossover_probability": 0.9,
+      "mutation_probability": 0.2,
+      "sigma_start": 0.7,
+      "sigma_end": 0.025,
+      "blx_alpha": 0.5,
+      "tournament_size": 3,
+      "elite": 2
+    },
+    "GA_p0.40": {
+      "population": 100,
+      "evaluations": 40000,
+      "crossover_probability": 0.9,
+      "mutation_probability": 0.4,
+      "sigma_start": 0.7,
+      "sigma_end": 0.025,
+      "blx_alpha": 0.5,
+      "tournament_size": 3,
+      "elite": 2
+    }
+  },
+  "random_baseline": "uniform sampling same evaluation budget"
+}
