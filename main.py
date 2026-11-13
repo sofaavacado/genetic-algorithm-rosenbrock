@@ -1,6 +1,5 @@
 """ЛР1: вещественный генетический алгоритм для 7-мерной функции Розенброка.
 
-Зависимости: numpy, matplotlib. Все эволюционные операторы реализованы здесь.
 """
 from __future__ import annotations
 
@@ -19,10 +18,7 @@ OPTIMUM = np.ones(DIM, dtype=float)
 
 
 def rosenbrock(points: np.ndarray) -> np.ndarray:
-    """f(x) = sum_{i=1}^{d-1} [100(x_{i+1}-x_i^2)^2+(x_i-1)^2].
-
-    Accepts a single vector (d,) or a batch (n,d); returns vector of scores.
-    """
+    """f(x) = sum_{i=1}^{d-1} [100(x_{i+1}-x_i^2)^2+(x_i-1)^2]"""
     x = np.asarray(points, dtype=float)
     if x.ndim == 1:
         x = x[None, :]
